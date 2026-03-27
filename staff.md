@@ -6,7 +6,11 @@ permalink: /staff/
 
 **Advisor:** Ms. Parent
 
-<h4> Stem Journal Staff for the 2025-2026 School Year </h4>
+
+<h3> Stem Journal Staff for the 2025-2026 School Year: </h3>
+
+-------------------
+
 
 **Out-going Editor in Chief:** Gray McGuinness '26
 
