@@ -5,7 +5,7 @@ title: Staples Stem Journal
 #
 author:
   name: Staples Stem Journal
-  email: potentional@email.com
+  email: 
 #
 # The `>` after `description:` means to ignore line-breaks until next key. If
 #   you wish to omit the line-break after the end of text, use `>-` instead.
@@ -78,10 +78,10 @@ author:
 #       * icon     Font Awesome icon id. `github` corresponds to `fa-github`.
 #       * url      Full URL of social profile.
 minima:
-  social_links:
-    - title: Stem Journal Issuu Page
-      icon: github
-      url: "https://issuu.com/staplesstemjournal/"
+  #social_links:
+  #  - title: Stem Journal Issuu Page
+  #    icon: github
+  #    url: "https://issuu.com/staplesstemjournal/"
 
 # Author profiles collection (see docs/adding-authors.md)
 collections:
@@ -109,6 +109,10 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - templates/
+  - docs/
+  
+  
+
 #     - title: Jekyll at X (formerly Twitter)
 #       icon: x-twitter
 #       url: "https://x.com/jekyllrb"
