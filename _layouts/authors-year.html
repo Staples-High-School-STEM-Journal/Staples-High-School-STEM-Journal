@@ -1,0 +1,36 @@
+---
+layout: base
+---
+{%- comment -%}
+  Per-year staff page (offline until activated — see docs/adding-authors.md).
+  Stub pages set only `layout:` and `year:`; the heading is "Staff of {year}".
+{%- endcomment -%}
+{%- assign y = page.year -%}
+{%- assign members = site.authors | where_exp: "item", "item.years contains y" -%}
+{%- assign sorted = "" | split: "" -%}
+{%- for rank in site.data.ranks -%}
+  {%- assign group = members | where: "role", rank | sort: "name" -%}
+  {%- assign sorted = sorted | concat: group -%}
+{%- endfor -%}
+{%- assign unranked = "" | split: "" -%}
+{%- for a in members -%}
+  {%- unless site.data.ranks contains a.role -%}
+    {%- assign unranked = unranked | push: a -%}
+  {%- endunless -%}
+{%- endfor -%}
+{%- assign sorted = sorted | concat: unranked -%}
+<article class="authors-directory">
+
+  <header class="post-header">
+    <h1 class="post-title">Staff of {{ page.year }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {%- include year-nav.html current=y -%}
+
+  {%- include author-list.html authors=sorted heading=2 -%}
+
+</article>

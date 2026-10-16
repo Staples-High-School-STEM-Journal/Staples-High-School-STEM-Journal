@@ -1,0 +1,21 @@
+---
+layout: base
+---
+{%- comment -%}
+  Section page (offline scaffolding — see docs/sections.md). Stub pages set
+  `layout:`, `title:`, `section:` (the slug), and a permalink.
+{%- endcomment -%}
+{%- assign section_posts = site.posts | where: "section", page.section -%}
+<article class="section-page">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {%- include entry-list.html posts=section_posts thumbnail="true" byline="true" heading=2 -%}
+
+</article>

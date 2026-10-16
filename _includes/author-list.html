@@ -1,0 +1,25 @@
+{%- comment -%}
+  Author cards in the shared entry-row pattern: avatar, name (linked), and
+  role in the meta position. Parameters: authors (array, required), heading
+  (2 or 3, default 3). See docs/adding-authors.md.
+{%- endcomment -%}
+{%- assign lvl = include.heading | default: 3 -%}
+<ul class="entry-list">
+  {%- for a in include.authors -%}
+  <li class="entry-row">
+    {%- if a.image -%}
+    <a class="entry-thumbnail author-avatar-thumb" href="{{ a.url | relative_url }}">
+      <img src="{{ a.image | relative_url }}" alt="{{ a.name | escape }}">
+    </a>
+    {%- endif -%}
+    <div class="entry-text">
+      <h{{ lvl }} class="entry-title">
+        <a href="{{ a.url | relative_url }}">{{ a.name | escape }}</a>
+      </h{{ lvl }}>
+      {%- if a.role -%}
+      <p class="entry-meta">{{ a.role }}</p>
+      {%- endif -%}
+    </div>
+  </li>
+  {%- endfor -%}
+</ul>

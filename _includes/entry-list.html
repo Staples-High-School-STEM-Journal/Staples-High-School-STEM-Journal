@@ -1,0 +1,25 @@
+{%- comment -%}
+  Shared entry-row listing. Parameters: posts (array, required), thumbnail
+  ("true"/"false"), byline ("true"/"false"), heading (2 or 3, default 3).
+  See docs/design-notes.md.
+{%- endcomment -%}
+{%- assign lvl = include.heading | default: 3 -%}
+<ul class="entry-list">
+  {%- for post in include.posts -%}
+  <li class="entry-row">
+    {%- if include.thumbnail == "true" and post.image -%}
+    <a class="entry-thumbnail" href="{{ post.url | relative_url }}">
+      <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+    </a>
+    {%- endif -%}
+    <div class="entry-text">
+      <h{{ lvl }} class="entry-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </h{{ lvl }}>
+      {%- if include.byline == "true" -%}
+        {%- include byline.html post=post -%}
+      {%- endif -%}
+    </div>
+  </li>
+  {%- endfor -%}
+</ul>

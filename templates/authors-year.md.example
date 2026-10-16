@@ -1,0 +1,16 @@
+---
+layout: authors-year
+year: 2024 # TODO: set the staff year this page lists
+permalink: /authors/2024/ # TODO: match the year above
+---
+
+<!--
+  EXAMPLE STUB for a per-year staff page (offline scaffolding — see
+  docs/adding-authors.md). To add a year page once the directory is live:
+
+  1. Copy this file to the repository root as e.g. authors-2024.md.
+  2. Set `year:` and the permalink to the same year.
+
+  The heading ("Staff of {year}") and the member list render automatically
+  from author front matter; years are never shown as per-author text.
+-->

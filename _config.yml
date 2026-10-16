@@ -4,8 +4,8 @@
 title: Staples Stem Journal
 #
 author:
-*name: Staples Stem Journal
-*email: potentional@email.com
+  name: Staples Stem Journal
+  email: potentional@email.com
 #
 # The `>` after `description:` means to ignore line-breaks until next key. If
 #   you wish to omit the line-break after the end of text, use `>-` instead.
@@ -77,10 +77,38 @@ author:
 #       * title    Tooltip rendered on hovering over icon.
 #       * icon     Font Awesome icon id. `github` corresponds to `fa-github`.
 #       * url      Full URL of social profile.
-social_links:
-*title: Stem Journal Issuu Page
-*icon: github
-*url: "https://issuu.com/staplesstemjournal/"
+minima:
+  social_links:
+    - title: Stem Journal Issuu Page
+      icon: github
+      url: "https://issuu.com/staplesstemjournal/"
+
+# Author profiles collection (see docs/adding-authors.md)
+collections:
+  authors:
+    output: true
+    permalink: /authors/:name/
+
+defaults:
+  - scope:
+      type: authors
+    values:
+      layout: author
+
+# Offline scaffolding lives in templates/ (Jekyll defaults repeated so they
+# are kept when overriding `exclude`).
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - templates/
 #     - title: Jekyll at X (formerly Twitter)
 #       icon: x-twitter
 #       url: "https://x.com/jekyllrb"

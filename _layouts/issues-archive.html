@@ -1,0 +1,20 @@
+---
+layout: base
+---
+{%- comment -%}
+  Issues archive (offline scaffolding — see docs/sections.md). Lists every
+  issue via the shared entry-list include.
+{%- endcomment -%}
+<article class="issues-archive">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {%- include entry-list.html posts=site.posts thumbnail="true" byline="true" heading=2 -%}
+
+</article>

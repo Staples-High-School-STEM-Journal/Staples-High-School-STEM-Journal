@@ -1,1 +1,27 @@
-// Placeholder to allow overriding predefined variables smoothly.
+// Staples STEM Journal design tokens — see docs/design-notes.md.
+// Contrast on $background-color: ink 13.45:1, muted 5.14:1, accent 6.69:1 (WCAG AA).
+
+// Typography: system stacks only (serif body, sans meta).
+$base-font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+$sans-font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+$base-font-size:   18px;
+$base-line-height: 1.65;
+$content-width:    684px; // ~38rem measure
+
+// Flat paper palette.
+$background-color: #FAF9F6; // warm off-white paper
+$text-color:       #2B2B2B; // ink (never pure black)
+$heading-color:    #2B2B2B;
+$brand-color:      #3B5B7E; // dusty navy accent
+$brand-color-dimmed: #6A6A6A; // muted meta text
+$site-title-color: #2B2B2B;
+$link-base-color:    #3B5B7E; // accent is for links only
+$link-visited-color: #3B5B7E;
+$link-hover-color:   #324F6E; // accent darkened slightly
+$border-color-01: #E5E2DC;    // hairlines
+$border-color-02: #D8D4CC;
+$border-color-03: #6A6A6A;
+$code-background-color: #F3F1EC;
+
+// Single knob for author-avatar dimensions (docs/design-notes.md).
+$author-avatar-size: 112px;

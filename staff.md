@@ -6,11 +6,9 @@ permalink: /staff/
 
 **Advisor:** Ms. Parent
 
+### Stem Journal Staff for the 2025-2026 School Year:
 
-<h3> Stem Journal Staff for the 2025-2026 School Year: </h3>
-
--------------------
-
+---
 
 **Out-going Editor in Chief:** Gray McGuinness '26
 
@@ -48,13 +46,10 @@ Azita Vazhayil '28,
 Anita Vinokur '29,
 Jessica Willis '27
 
-<br>
-
-<h4> We'd also like to recognize our past editors in chief: </h4>
+<h4>We'd also like to recognize our past editors in chief:</h4>
 
 Reia Bhardwaj '26,
 Samuel Zwick-Lavinsky '25,
 William Boberski '25,
 Whitman Teplica '23,
 Lucia Wang '23
-

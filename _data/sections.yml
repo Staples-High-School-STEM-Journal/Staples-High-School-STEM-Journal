@@ -1,0 +1,8 @@
+# Sections for front-page grouping and section pages (see docs/sections.md).
+# Uncomment and adapt to activate; a section only renders once at least one
+# post declares its slug in the post's front matter (`section: <slug>`).
+#
+# - slug: reviews
+#   name: Reviews
+# - slug: summaries
+#   name: Summaries

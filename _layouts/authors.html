@@ -1,0 +1,35 @@
+---
+layout: base
+---
+{%- comment -%}
+  Authors directory (offline until activated — see docs/adding-authors.md).
+  One continuous list: rank weight first (from _data/ranks.yml), then
+  alphabetical; unranked roles sort alphabetically after ranked ones.
+{%- endcomment -%}
+{%- assign sorted = "" | split: "" -%}
+{%- for rank in site.data.ranks -%}
+  {%- assign group = site.authors | where: "role", rank | sort: "name" -%}
+  {%- assign sorted = sorted | concat: group -%}
+{%- endfor -%}
+{%- assign unranked = "" | split: "" -%}
+{%- for a in site.authors -%}
+  {%- unless site.data.ranks contains a.role -%}
+    {%- assign unranked = unranked | push: a -%}
+  {%- endunless -%}
+{%- endfor -%}
+{%- assign sorted = sorted | concat: unranked -%}
+<article class="authors-directory">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {%- include year-nav.html -%}
+
+  {%- include author-list.html authors=sorted heading=2 -%}
+
+</article>

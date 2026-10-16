@@ -1,0 +1,36 @@
+{%- comment -%}
+  Byline-dateline: "By {linked author names} · {date}". Parameters:
+  post (a post document; defaults to the current page). See docs/adding-authors.md.
+{%- endcomment -%}
+{%- assign p = include.post | default: page -%}
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+{%- assign pdate = p.date | date_to_xmlschema -%}
+{%- if p.authors -%}
+  {%- assign slugs = p.authors -%}
+{%- else -%}
+  {%- assign slugs = p.author | split: "," -%}
+{%- endif -%}
+{%- assign n = slugs | size -%}
+<p class="byline">
+{%- if n > 0 -%}
+  {%- capture names -%}
+    {%- for raw in slugs -%}
+      {%- assign slug = raw | strip -%}
+      {%- assign aid = "/authors/" | append: slug -%}
+      {%- assign a = site.authors | where_exp: "item", "item.id == aid" | first -%}
+      {%- if a -%}
+        <a class="byline-author" href="{{ a.url | relative_url }}">{{ a.name }}</a>
+      {%- else -%}
+        {{ slug }}
+      {%- endif -%}
+      {%- unless forloop.last -%}
+        {%- if n > 2 -%},{%- endif -%}
+        {%- assign nxt = forloop.index | plus: 1 -%}
+        {%- if nxt == n %} and {% else %} {% endif -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  By {{ names }} ·
+{%- endif %}
+<time class="dt-published" datetime="{{ pdate }}" itemprop="datePublished">{{ pdate | date: date_format }}</time>
+</p>

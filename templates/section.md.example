@@ -1,0 +1,18 @@
+---
+layout: section
+title: TODO: Section Name
+section: todo-slug # must match the slug in _data/sections.yml
+permalink: /sections/todo-slug/ # TODO: match the slug above
+---
+
+<!--
+  EXAMPLE STUB for a section page (offline scaffolding — see
+  docs/sections.md). To activate:
+
+  1. Declare the section in _data/sections.yml (slug + name).
+  2. Add `section: <slug>` to the front matter of the posts that belong to it.
+  3. Copy this file to the repository root as e.g. reviews.md and fill in the
+     TODO values.
+
+  TODO: optional intro paragraph above the section's entry list.
+-->

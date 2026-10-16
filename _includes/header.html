@@ -6,11 +6,14 @@
     {%- assign page_titles = site.pages | map: 'title' | compact %}
     <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
 
+    <div class="masthead-rule" aria-hidden="true"></div>
+
     {%- unless page_titles == empty %}
-      <nav class="site-nav">
+      <nav class="site-nav" aria-label="Site">
         <input type="checkbox" id="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon"></span>
+          <span class="visually-hidden">Menu</span>
         </label>
 
         {% include nav-items.html paths = page_paths %}

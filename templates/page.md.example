@@ -1,0 +1,14 @@
+---
+layout: page
+title: TODO: Page Title
+permalink: /todo-slug/
+---
+
+<!--
+  EXAMPLE STUB for a plain content page. Copy to the repository root, fill in
+  the TODO values, and write the page body below. A page with a `title:` joins
+  the site navigation automatically unless `header_pages`/`nav_pages` says
+  otherwise — check the nav after adding one.
+-->
+
+TODO: page body.

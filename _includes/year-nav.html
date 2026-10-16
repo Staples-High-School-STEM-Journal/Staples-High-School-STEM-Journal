@@ -1,0 +1,17 @@
+{%- comment -%}
+  Year navigation: a plain row of year links, newest-first. Years come from
+  author front matter only; used by the (offline) authors directory layouts.
+{%- endcomment -%}
+{%- assign all_years = "" | split: "" -%}
+{%- for a in site.authors -%}
+  {%- assign all_years = all_years | concat: a.years -%}
+{%- endfor -%}
+{%- assign years = all_years | uniq | sort | reverse -%}
+{%- if years.size > 0 -%}
+<nav class="year-nav" aria-label="Staff by year">
+  {%- for y in years -%}
+  <a class="year-nav-item{% if include.current == y %} year-nav-current{% endif %}"
+     href="{{ '/authors/' | append: y | append: '/' | relative_url }}">{{ y }}</a>
+  {%- endfor -%}
+</nav>
+{%- endif -%}
